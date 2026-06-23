@@ -1,0 +1,35 @@
+# SOVA documentation
+
+SOVA (Secure OTA for Vehicular Architectures) is an open, vendor-independent system for secure over-the-air firmware updates across vehicle fleets, built on Nerves and NervesHub. Firmware is delivered over 4G through redundant gateways, every update is cryptographically signed and verified before it is applied, and only the binary differences between versions are sent. It runs on OVCS, the open vehicle control system, and is developed under STRIKE IT 2026.
+
+This repository holds the documentation and the backlog. The firmware lives in its own repos: the 4G gateway is [`wan_router`](https://github.com/open-vehicle-control-system/wan_router), built on the [`nerves_system_fairphone2`](https://github.com/Spin42/nerves_system_fairphone2) Nerves system.
+
+## Documents
+
+- [`PLANNING.md`](PLANNING.md) — the Project Management Report: the delivery plan (three milestones with their user stories and test scenarios), the work-package / deliverable / objective reference (the source for every WP / D / O code), and reporting.
+- [`security/security-architecture-threat-model.md`](security/security-architecture-threat-model.md) — the threat model and the secure-update architecture.
+- [`build/milestone-1/`](build/milestone-1/) — setup guides (NervesHub, the 4G gateway) and the validation checklist.
+- [`data/schema/`](data/schema/) — the JSON Schema that test results are recorded against.
+- [`changelog/`](changelog/) — what changed in the firmware repos since the project started.
+
+The fifteen proposal deliverables consolidate into four documents (project management, security, build and validation, data and release), each built up across the project rather than written once at the end.
+
+## Backlog
+
+Work is tracked in [`backlog/`](backlog/) with [Backlog.md](https://backlog.md). There is one task per user story (US-1.1 to US-3.5), with the planning bullets as acceptance criteria, labelled by milestone, and subtasks under each story. Every task is a markdown file.
+
+Install the CLI once with `bun install -g backlog.md` (or run it with `bunx backlog.md`), then from this folder:
+
+```bash
+backlog board       # kanban board in the terminal
+backlog browser     # web interface at http://localhost:6420
+backlog task list   # flat list
+```
+
+To add a task under a story, for example US-1.2 (task-2):
+
+```bash
+backlog task create "Configure APN" -p task-2 -l milestone-1
+```
+
+Or edit the markdown directly: change `status`, or tick an acceptance-criteria checkbox.

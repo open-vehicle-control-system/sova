@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/open-vehicle-control-system/sova/data/schema/test-result.schema.json",
+  "title": "SOVA test/benchmark result",
+  "description": "Milestone 1 seed of the WP6 data-management schema. Every test scenario and benchmark run is recorded as one JSON document against this schema so results are FAIR (findable, accessible, interoperable, reusable) and consolidate into D6.1 (M6).",
+  "type": "object",
+  "required": ["scenario_id", "milestone", "timestamp", "outcome"],
+  "properties": {
+    "scenario_id": {
+      "type": "string",
+      "description": "Stable id of the scenario, e.g. 'm1-signed-update-applied'."
+    },
+    "milestone": {
+      "type": "string",
+      "enum": ["M1", "M2", "M3"],
+      "description": "Delivery-plan milestone this run belongs to."
+    },
+    "user_story": {
+      "type": "string",
+      "description": "Originating user story, e.g. 'US-1.1'."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "outcome": {
+      "type": "string",
+      "enum": ["pass", "fail", "in_progress"]
+    },
+    "device_id": {
+      "type": "string",
+      "description": "NervesHub device identifier, e.g. 'gateway-01'."
+    },
+    "firmware_from": { "type": "string", "description": "Version before update." },
+    "firmware_to": { "type": "string", "description": "Version after update." },
+    "metrics": {
+      "type": "object",
+      "description": "Numeric measurements captured during the run. Milestone 1 uses a subset; later milestones add failover_seconds, delta_ratio, etc.",
+      "properties": {
+        "transfer_bytes": { "type": "integer" },
+        "full_image_bytes": { "type": "integer" },
+        "delta_ratio": { "type": "number", "description": "transfer_bytes / full_image_bytes." },
+        "download_seconds": { "type": "number" },
+        "apply_seconds": { "type": "number" },
+        "rollback_seconds": { "type": "number" },
+        "signal_band": { "type": "string", "enum": ["good", "moderate", "poor"] }
+      },
+      "additionalProperties": true
+    },
+    "evidence_url": {
+      "type": "string",
+      "description": "Link to console log, NervesHub deployment, or artifact."
+    },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": false
+}
