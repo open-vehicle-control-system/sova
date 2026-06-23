@@ -4,9 +4,11 @@ title: US-1.2 — Integrate the Citronics board as the 4G transport
 status: In Progress
 assignee: []
 created_date: '2026-06-23 17:23'
+updated_date: '2026-06-23 18:22'
 labels:
   - user-story
   - milestone-1
+milestone: m-0
 dependencies: []
 ordinal: 2000
 ---

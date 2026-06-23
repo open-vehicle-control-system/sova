@@ -4,9 +4,11 @@ title: US-2.1 — Second gateway registered and monitored
 status: To Do
 assignee: []
 created_date: '2026-06-23 17:23'
+updated_date: '2026-06-23 18:23'
 labels:
   - user-story
   - milestone-2
+milestone: m-1
 dependencies: []
 ordinal: 6000
 ---

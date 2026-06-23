@@ -4,9 +4,11 @@ title: 'US-2.4 — Both gateways fail simultaneously, safe degradation'
 status: To Do
 assignee: []
 created_date: '2026-06-23 17:23'
+updated_date: '2026-06-23 18:23'
 labels:
   - user-story
   - milestone-2
+milestone: m-1
 dependencies: []
 ordinal: 9000
 ---

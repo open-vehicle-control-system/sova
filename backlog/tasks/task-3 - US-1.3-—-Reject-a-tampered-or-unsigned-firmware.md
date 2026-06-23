@@ -4,9 +4,11 @@ title: US-1.3 — Reject a tampered or unsigned firmware
 status: To Do
 assignee: []
 created_date: '2026-06-23 17:23'
+updated_date: '2026-06-23 18:22'
 labels:
   - user-story
   - milestone-1
+milestone: m-0
 dependencies: []
 ordinal: 3000
 ---

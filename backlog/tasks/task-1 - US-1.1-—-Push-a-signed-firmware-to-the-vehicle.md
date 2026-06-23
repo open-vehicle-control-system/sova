@@ -4,9 +4,11 @@ title: US-1.1 — Push a signed firmware to the vehicle
 status: To Do
 assignee: []
 created_date: '2026-06-23 17:23'
+updated_date: '2026-06-23 18:21'
 labels:
   - user-story
   - milestone-1
+milestone: m-0
 dependencies: []
 ordinal: 1000
 ---

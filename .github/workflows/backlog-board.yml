@@ -1,0 +1,47 @@
+name: Export backlog board
+
+on:
+  schedule:
+    - cron: '0 3 * * *'        # nightly at 03:00 UTC
+  push:
+    branches: [main]
+    paths:
+      - 'backlog/tasks/**'
+      - '.github/workflows/backlog-board.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: backlog-board
+  cancel-in-progress: true
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0        # backlog reads task state across branches
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - run: npm install -g backlog.md
+
+      - name: Export board
+        run: backlog board export backlog/board.md --force
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- backlog/board.md; then
+            echo "Board unchanged."
+            exit 0
+          fi
+          git config user.name "Marc Lainez"
+          git config user.email "marc.lainez@gmail.com"
+          git add backlog/board.md
+          git commit -m "Update backlog board export [skip ci]"
+          git push

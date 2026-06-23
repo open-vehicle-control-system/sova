@@ -4,9 +4,11 @@ title: US-2.3 — Update completes despite gateway failure mid-download
 status: To Do
 assignee: []
 created_date: '2026-06-23 17:23'
+updated_date: '2026-06-23 18:23'
 labels:
   - user-story
   - milestone-2
+milestone: m-1
 dependencies: []
 ordinal: 8000
 ---

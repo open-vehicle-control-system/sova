@@ -4,9 +4,11 @@ title: 'US-1.5 — Apply a delta update (NervesHub auto-diff, on by default)'
 status: To Do
 assignee: []
 created_date: '2026-06-23 17:23'
+updated_date: '2026-06-23 18:22'
 labels:
   - user-story
   - milestone-1
+milestone: m-0
 dependencies: []
 ordinal: 5000
 ---

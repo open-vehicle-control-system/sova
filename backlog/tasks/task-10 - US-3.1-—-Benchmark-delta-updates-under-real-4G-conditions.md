@@ -4,9 +4,11 @@ title: US-3.1 — Benchmark delta updates under real 4G conditions
 status: To Do
 assignee: []
 created_date: '2026-06-23 17:23'
+updated_date: '2026-06-23 18:23'
 labels:
   - user-story
   - milestone-3
+milestone: m-2
 dependencies: []
 ordinal: 10000
 ---
