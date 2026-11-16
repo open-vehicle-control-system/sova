@@ -1,5 +1,5 @@
 # Kanban Board Export (powered by Backlog.md)
-Generated on: 2026-11-15 10:21:32
+Generated on: 2026-11-16 10:36:12
 Project: SOVA
 
 | To Do | In Progress | Done |
